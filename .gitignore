@@ -1,0 +1,54 @@
+# Visual Studio and IDE specific files
+.vs/
+*.VC.db
+*.suo
+*.user
+*.sln.docstates
+
+# Build output directories
+# Covers the Visual Studio default 'out' and the common manual 'build'
+out/
+[Bb]uild/
+[Bb]uild_msvc/
+[Bb]uild_autocomplete
+.cache/
+
+/data/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+
+# Compiled Object files
+*.obj
+*.o
+
+# Precompiled Headers
+*.pch
+
+# Libraries, DLLs, and Executables
+*.lib
+*.dll
+*.exe
+*.so
+*.a
+
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+thirdparty/grpc
+
+genproto/*
+!genproto/CMakeLists.txt
+
+*.sublime-project
+*.sublime-workspace
+compile_flags.txt
+compile_commands.json
+
