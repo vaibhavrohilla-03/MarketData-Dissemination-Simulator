@@ -9,7 +9,7 @@ set(_GRPC_PLUGIN_EXE $<TARGET_FILE:grpc_cpp_plugin>)
 foreach(proto_file ${PROTO_FILES})
     get_filename_component(proto_name ${proto_file} NAME_WE)
 
-    set(_pb_cc "${PROTO_GEN_DIR}/${proto_name}.pb.cc")`
+    set(_pb_cc "${PROTO_GEN_DIR}/${proto_name}.pb.cc")
     set(_pb_h  "${PROTO_GEN_DIR}/${proto_name}.pb.h")
     set(_grpc_cc "${PROTO_GEN_DIR}/${proto_name}.grpc.pb.cc")
     set(_grpc_h  "${PROTO_GEN_DIR}/${proto_name}.grpc.pb.h")

@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(MarketDataDissemination)
 
+add_library(nlohmann_json INTERFACE)
+target_include_directories(nlohmann_json INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty")
+
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 #set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
 
@@ -22,6 +25,8 @@ add_subdirectory(genproto)
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 list(FILTER MY_SOURCES EXCLUDE REGEX ".*-main\\.cpp$")
 
+
+
 add_executable("${CMAKE_PROJECT_NAME}_server" source/server-main.cpp ${MY_SOURCES})
 
 target_include_directories("${CMAKE_PROJECT_NAME}_server" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
@@ -31,7 +36,8 @@ target_link_libraries("${CMAKE_PROJECT_NAME}_server" PUBLIC
     grpc++ 
     libprotobuf
     absl::flags 
-    absl::flags_parse)
+    absl::flags_parse
+    nlohmann_json)
 
 add_executable("${CMAKE_PROJECT_NAME}_client" source/client-main.cpp ${MY_SOURCES})
 
@@ -42,4 +48,5 @@ target_link_libraries("${CMAKE_PROJECT_NAME}_client" PUBLIC
     grpc++ 
     libprotobuf
     absl::flags 
-    absl::flags_parse)
+    absl::flags_parse
+    nlohmann_json)
