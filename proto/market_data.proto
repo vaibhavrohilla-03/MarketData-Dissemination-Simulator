@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package marketdata;
+
+enum UpdateType {
+
+	ADD = 0;
+
+	MODIFY = 1;
+
+	REMOVE = 2;
+}
+
+message Level {
+
+	double price = 1;
+
+	int32 quantity = 2;
+
+	bool is_buy = 3;
+}
+
+message OrderbookSnapshotUpdate {
+
+	repeated Level bids = 1;
+
+	repeated Level asks = 2;
+}
+
+message OrderbookIncrementalUpdate {
+
+	UpdateType type = 1;
+	
+	Level level = 2;
+
+}
+
+message OrderbookUpdate {
+
+	int32 instrument_id = 1;
+	oneof update {
+
+		OrderbookSnapshotUpdate snapshot = 2;
+
+		OrderbookIncrementalUpdate incremental = 3;
+
+	}
+
+}
+
+message Subscribe {
+
+	repeated int32 instrument_ids = 1;
+}
+
+message UnSubscribe {
+
+	repeated int32 instrument_ids = 1;
+}
+
+message SubscriptionRequest {
+
+	oneof action {
+
+		Subscribe subscribe = 1;
+
+		UnSubscribe unsubscribe = 2;
+	}
+}
+
+service OrderbookService {
+
+	rpc StreamOrderbookUpdates (stream SubscriptionRequest) returns (stream OrderbookUpdate);
+}
