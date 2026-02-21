@@ -1,0 +1,34 @@
+{
+	"instrument_id" : 1,
+	"symbol" : "NVDA",
+	
+	"bids": [
+     {
+       "price": 150.55,
+       "quantity": 500
+     },
+     {
+       "price": 150.50,
+       "quantity": 1200
+     },
+     {
+       "price": 150.45,
+       "quantity": 300
+     }
+  ],
+
+  "asks": [
+    {
+      "price": 150.60,
+      "quantity": 100
+    },
+    {
+      "price": 150.65,
+      "quantity": 850
+    },
+    {
+      "price": 150.70,
+      "quantity": 400
+    }
+  ]
+}

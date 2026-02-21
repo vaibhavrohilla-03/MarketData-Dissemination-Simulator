@@ -25,8 +25,6 @@ add_subdirectory(genproto)
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 list(FILTER MY_SOURCES EXCLUDE REGEX ".*-main\\.cpp$")
 
-
-
 add_executable("${CMAKE_PROJECT_NAME}_server" source/server-main.cpp ${MY_SOURCES})
 
 target_include_directories("${CMAKE_PROJECT_NAME}_server" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")

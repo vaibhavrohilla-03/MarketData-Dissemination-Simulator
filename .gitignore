@@ -43,7 +43,7 @@ Makefile
 *.sln.docstates
 
 thirdparty/grpc
-thirdparty/nlohmann/json.hpp
+thirdparty/nlohmann/
 
 genproto/*
 !genproto/CMakeLists.txt
