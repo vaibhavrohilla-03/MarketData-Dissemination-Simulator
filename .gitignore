@@ -53,3 +53,37 @@ genproto/*
 compile_flags.txt
 compile_commands.json
 
+
+# Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python Bytecode (compiled files)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+*.egg
+.installed.cfg
+MANIFEST
+
+# uv / pip specific
+.python-version
+uv.lock
+
+# Documentation (if using Sphinx/MkDocs)
+site/
+_build/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+pyrightconfig.json
+
+python_client/proto/*
