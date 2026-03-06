@@ -31,6 +31,8 @@ void RunSimulation(OrderBookManager &manager, std::atomic<bool> &stop_flag) {
   };
 
   std::cout << "Market simulation started.\n";
+  
+  std::uniform_int_distribution<int> spread_dist(1,100);
 
   while (!stop_flag.load()) {
 
@@ -39,7 +41,6 @@ void RunSimulation(OrderBookManager &manager, std::atomic<bool> &stop_flag) {
 
     long long base = base_prices[id];
 
-    std::uniform_int_distribution<int> spread_dist(1,100);
     int offset = spread_dist(rng);
 
     long long price = is_buy ? (base - offset) : (base + offset);
