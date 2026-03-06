@@ -4,7 +4,8 @@
 
 This project is a high-performance market data dissemination simulator designed to process and distribute level 3 orderbook data connected clients through grpc. It simulates the behavior of a trading venue's middleware component.
 
-I was inspired to make this project by this video the architecture I followed was referenced from this video
+I was inspired to make this project by this video 
+The architecture I followed was heavily referenced from this video
 
 *[Coding Jesus - Building a Market Data Dissemination Simulator](https://youtu.be/GW0Wh1qjbi0?si=sX3NtKG4AGgo3XjD).*
 ### Data Model: Level 3 Orderbook
