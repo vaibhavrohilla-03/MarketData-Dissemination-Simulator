@@ -38,7 +38,11 @@ void RunSimulation(OrderBookManager &manager, std::atomic<bool> &stop_flag) {
     bool is_buy = side_dist(rng) == 1;
 
     long long base = base_prices[id];
-    long long price = base + price_offset_dist(rng);
+
+    std::uniform_int_distribution<int> spread_dist(1,100);
+    int offset = spread_dist(rng);
+
+    long long price = is_buy ? (base - offset) : (base + offset);
     int quantity = quantity_dist(rng);
 
     int op_roll = op_dist(rng);
