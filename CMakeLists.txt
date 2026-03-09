@@ -37,7 +37,7 @@ target_link_libraries("${CMAKE_PROJECT_NAME}_server" PUBLIC
     absl::flags_parse
     nlohmann_json)
 
-add_executable("${CMAKE_PROJECT_NAME}_client" source/client-main.cpp ${MY_SOURCES})
+add_executable("${CMAKE_PROJECT_NAME}_client" source/Test-client-main.cpp ${MY_SOURCES})
 
 target_include_directories("${CMAKE_PROJECT_NAME}_client" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 

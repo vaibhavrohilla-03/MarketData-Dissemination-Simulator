@@ -236,19 +236,19 @@
 //   }
 // };
 
-// int main() {
+int main() {
 
-//   std::string server_address("localhost:50051");
+  // std::string server_address("localhost:50051");
 
-//   std::shared_ptr<grpc::Channel> channel =
-//       grpc::CreateChannel(server_address, grpc::InsecureChannelCredentials());
+  // std::shared_ptr<grpc::Channel> channel =
+  //     grpc::CreateChannel(server_address, grpc::InsecureChannelCredentials());
 
-//   MarketDataClient client(channel);
+  // MarketDataClient client(channel);
 
-//   std::cout << "Connecting to market data server at " << server_address
-//             << "...\n";
+  // std::cout << "Connecting to market data server at " << server_address
+  //           << "...\n";
 
-//   client.Run();
+  // client.Run();
 
-//   return 0;
-// }
+  return 0;
+}
